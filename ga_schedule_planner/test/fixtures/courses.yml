@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_type_id: 1
+  classroom_id: 1
+  name: MyString
+  start_date: 2015-04-13
+  end_date: 2015-04-13
+  description: MyText
+  capacity: 1
+
+two:
+  course_type_id: 1
+  classroom_id: 1
+  name: MyString
+  start_date: 2015-04-13
+  end_date: 2015-04-13
+  description: MyText
+  capacity: 1
