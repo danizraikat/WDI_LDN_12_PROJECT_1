@@ -1,0 +1,26 @@
+<h1>Existing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.second_name %></td>
+        <td><%= user.role %></td>
+        <td><%= link_to 'Show', user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
