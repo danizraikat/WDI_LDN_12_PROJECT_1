@@ -13,7 +13,19 @@
   </head>
 
   <body>
-
+    
+    <ul>
+      <% if user_signed_in? %>
+        <li>Hello <%= current_user.email%></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Edit Profile",
+          edit_user_registration_path %></li>      
+      <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Create an account", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+    
     <%= yield %>
 
   </body>
