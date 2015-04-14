@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :courses
   resources :bookings
+  resources :users
   devise_for :users
   
   
