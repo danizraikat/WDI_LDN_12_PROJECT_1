@@ -21,6 +21,6 @@ classroom2 = campus2.classrooms.create!(name: "Classroom2", capacity: 20)
 course1 = course_type1.courses.create!(classroom_id: classroom1.id, name: "WDI12", start_date: Time.now, end_date: Time.now + 60.days, description: "The new WDI", capacity: 50)
 course2 = classroom2.courses.create!(course_type_id: course_type2.id, name: "Analytics12", start_date: Time.now + 30.days, end_date: Time.now + 60.days, description: "The new Analytics", capacity: 20)
 
-booking1 = u1.bookings.create!(course_id: course1.id)
-booking2 = course2.bookings.create!(user_id: u2.id)
+booking1 = u1.bookings.create!(course_id: course1.id, paid: true)
+booking2 = course2.bookings.create!(user_id: u2.id, paid: true)
 
