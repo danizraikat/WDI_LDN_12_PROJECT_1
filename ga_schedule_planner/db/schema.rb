@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(version: 20150414112024) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "campus", force: :cascade do |t|
-    t.string   "name"
-    t.text     "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "campuses", force: :cascade do |t|
     t.string   "name"
     t.text     "address"
