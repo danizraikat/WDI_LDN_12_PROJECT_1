@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :bookings 
-  has_and_belongs_to_many :courses, through: :bookings
+  has_many :courses, through: :bookings
+  validates :role, :first_name, :second_name, :gender, :tel_number, presence: true 
 end
