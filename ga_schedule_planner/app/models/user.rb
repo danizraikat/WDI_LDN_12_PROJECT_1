@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     message: "%{value} is not a GA role" }
   validates :first_name, :second_name, format: { with: /\A[a-zA-Z]+\z/,
     message: "only allows letters" }
+  mount_uploader :profile_image, ProfileImageUploader
 
 end
  

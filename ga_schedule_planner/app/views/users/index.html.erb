@@ -12,6 +12,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.profile_image.url %></td>
         <td><%= user.first_name %></td>
         <td><%= user.second_name %></td>
         <td><%= user.role %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414112024) do
+ActiveRecord::Schema.define(version: 20150415152215) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150414112024) do
     t.string   "password_confirmation"
     t.string   "gender"
     t.string   "tel_number"
+    t.string   "profile_image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
