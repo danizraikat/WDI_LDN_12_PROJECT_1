@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :course_types
   resources :courses
   resources :bookings
-  resources :users
   devise_for :users
+  resources :users, only: [:index, :show]
+  root to: "courses#index" 
   
   
   # The priority is based upon order of creation: first created -> highest priority.
