@@ -34,8 +34,18 @@
 
           <!-- Left Nav Section -->
           <ul class="left">
-            <li><%= link_to 'Bookings', bookings_path %></li>
-            <li><%= link_to 'All Courses', courses_path %></li>
+            <li class="has-dropdown">
+              <%= link_to 'Bookings', bookings_path %>
+              <ul class="dropdown">
+                <li><%= link_to 'New', new_booking_path %></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <%= link_to 'All Courses', courses_path %>
+              <ul class="dropdown">
+                <li><%= link_to 'New', new_course_path %></li>
+              </ul>
+            </li>
             <li><%= link_to 'Members', users_path %></li>
             <li><%= link_to 'Address', campuses_path %></li>
           </ul>

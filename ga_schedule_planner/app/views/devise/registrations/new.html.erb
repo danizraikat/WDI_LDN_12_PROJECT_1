@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.text_field :role, autocomplete: "on", autofocus: true %>
+    <%= f.select :role, options_for_select(%w[Admin Instructor Student]), autofocus: true %>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender, autocomplete: "on" %>
+    <%= f.select :gender, options_for_select(%w[Female Male]) %>
   </div>
 
   <div class="field">

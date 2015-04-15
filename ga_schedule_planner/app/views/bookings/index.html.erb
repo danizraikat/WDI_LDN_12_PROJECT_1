@@ -16,7 +16,7 @@
       <tr>
         <td><%= booking.user.second_name %></td>
         <td><%= booking.course.name %></td>
-        <td><%= link_to 'Show', booking %></td>
+        <!-- <td><%= link_to 'Show', booking %></td> -->
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'New Booking', new_booking_path %>
-<%= link_to 'View GA Courses', courses_path %>
+<button><%= link_to 'New Booking', new_booking_path %></button>
+
