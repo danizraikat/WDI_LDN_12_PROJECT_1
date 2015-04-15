@@ -7,7 +7,6 @@
     <tr>
       <th>User</th>
       <th>Course</th>
-      <th>Paid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +14,8 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.user.email %></td>
-        <td><%= booking.course_id %></td>
-        <td><%= booking.paid %></td>
+        <td><%= booking.user.second_name %></td>
+        <td><%= booking.course.name %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
