@@ -20,9 +20,9 @@
     <tbody>
       <% @courses.each do |course| %>
         <tr>
+          <td><strong><%= course.name %></strong></td>
           <td><%= course.course_type.name %></td>
           <td><%= course.classroom.name %></td>
-          <td><%= course.name %></td>
           <td><%= course.start_date %></td>
           <td><%= course.end_date %></td>
           <td><%= course.description %></td>
