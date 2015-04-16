@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -35,8 +35,9 @@
           <!-- Left Nav Section -->
           <ul class="left">
             <li class="has-dropdown">
-              <%= link_to 'Bookings', bookings_path %>
+              <%= link_to 'Bookings', "#" %>
               <ul class="dropdown">
+                <li><%= link_to 'View', bookings_path %></li>
                 <li><%= link_to 'New', new_booking_path %></li>
               </ul>
             </li>

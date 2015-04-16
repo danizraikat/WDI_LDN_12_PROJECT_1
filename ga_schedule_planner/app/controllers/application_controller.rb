@@ -9,8 +9,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) do |u|   
       u.permit(:email, :password, :passwword_confirmation, :first_name, :second_name, :role, :gender, :tel_number, :profile_image)
     end
-  devise_parameter_sanitizer.for(:account_update) do |u|   
-    u.permit(:email, :password, :passwword_confirmation, :current_password, :first_name, :second_name, :role, :gender, :tel_number, :profile_image)
+    devise_parameter_sanitizer.for(:account_update) do |u|   
+      u.permit(:email, :password, :passwword_confirmation, :current_password, :first_name, :second_name, :role, :gender, :tel_number, :profile_image)
+    end
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "Access denied."
+    redirect_to root_url
   end
+
 end

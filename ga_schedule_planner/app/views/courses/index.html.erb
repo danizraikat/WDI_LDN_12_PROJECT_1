@@ -1,40 +1,89 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Courses</h1>
+<h1>Listing Courses</h1> 
 
-<table>
-  <thead>
-    <tr>
-      <th>Course type</th>
-      <th>Classroom</th>
-      <th>Name</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Description</th>
-      <th>Capacity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
+<% if user_signed_in? %>  
+  <table>
+    <thead>
       <tr>
-        <td><%= course.course_type.name %></td>
-        <td><%= course.classroom.name %></td>
-        <td><%= course.name %></td>
-        <td><%= course.start_date %></td>
-        <td><%= course.end_date %></td>
-        <td><%= course.description %></td>
-        <td><%= course.capacity %></td>
-        <!-- <td><%= link_to 'Show', course %></td> -->
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Course type</th>
+        <th>Classroom</th>
+        <th>Name</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Description</th>
+        <th>Capacity</th>
+        <!-- <th colspan="3"></th> -->
       </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.course_type.name %></td>
+          <td><%= course.classroom.name %></td>
+          <td><%= course.name %></td>
+          <td><%= course.start_date %></td>
+          <td><%= course.end_date %></td>
+          <td><%= course.description %></td>
+          <td><%= course.capacity %></td>
+          <!-- <td><%= link_to 'Show', course %></td> -->
+          <td>
+            <% if can? :update, course %>
+              <button><%= link_to 'Edit', edit_course_path(course) %></button></td>
+            <% end %>
+          <td>
+            <% if can? :destroy, course %>
+              <button><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <p>
+    <% @courses.each do |course| %>
+      <% if can? :create, course %>
+        <button><%= link_to 'New Course', new_course_path %></button>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </p>
 
-<br>
 
-<%= link_to 'New Course', new_course_path %>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Course type</th>
+        <th>Classroom</th>
+        <th>Name</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Description</th>
+        <th>Capacity</th>
+        <!-- <th colspan="3"></th> -->
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.course_type.name %></td>
+          <td><%= course.classroom.name %></td>
+          <td><%= course.name %></td>
+          <td><%= course.start_date %></td>
+          <td><%= course.end_date %></td>
+          <td><%= course.description %></td>
+          <td><%= course.capacity %></td>
+          <!-- <td><%= link_to 'Show', course %></td> -->
+          <!-- <td><%= link_to 'Edit', edit_course_path(course) %></td> -->
+          <!-- <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 

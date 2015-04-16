@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
     message: "only allows letters" }
   mount_uploader :profile_image, ProfileImageUploader
 
+  def is?(what_role)
+    return false if self.role.nil?
+    saved = self.role.to_sym.downcase
+    saved == what_role.to_sym.downcase
+  end
+
 end
  
   # gender as male or female
