@@ -42,13 +42,16 @@
               </ul>
             </li>
             <li class="has-dropdown">
-              <%= link_to 'All Courses', courses_path %>
+              <%= link_to 'Courses', "#" %>
               <ul class="dropdown">
-                <li><%= link_to 'New', new_course_path %></li>
+                <li><%= link_to 'All', courses_path %></li>
+                <li><%= link_to 'Types', course_types_path %></li>
+                <li><%= link_to 'Classrooms', classrooms_path %></li>
+                <li><%= link_to 'Create', new_course_path %></li>
               </ul>
             </li>
             <li><%= link_to 'Members', users_path %></li>
-            <li><%= link_to 'Address', campuses_path %></li>
+            <li><%= link_to 'Campuses', campuses_path %></li>
           </ul>
         </section>
 

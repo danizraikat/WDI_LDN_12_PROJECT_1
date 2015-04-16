@@ -2,6 +2,7 @@ class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   
+  authorize_resource
   # GET /classrooms
   # GET /classrooms.json
   def index

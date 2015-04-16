@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Campuses</h1>
+<h1>GA Campuses</h1>
 
 <% if user_signed_in? %>  
   <table>
@@ -18,8 +18,16 @@
           <td><%= campus.name %></td>
           <td><%= campus.address %></td>
           <!-- <td><%= link_to 'Show', campus %></td> -->
-          <td><button><%= link_to 'Edit', edit_campus_path(campus) %></button></td>
-          <td><button><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+          <td>
+            <% if can? :update, campus %>
+              <button><%= link_to 'Edit', edit_campus_path(campus) %></button>
+            <% end %>
+          </td>
+          <td>
+            <% if can? :destroy, campus %>
+              <button><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            <% end %>      
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -27,7 +35,13 @@
 
   <br>
 
-  <button><%= link_to 'New Campus', new_campus_path %></button>
+  <p>
+    <% @campuses.each do |campus| %>
+      <% if can? :create, campus %>
+        <button><%= link_to 'New Campus', new_campus_path %></button>
+      <% end %>
+    <% end %>
+  </p>
 
 <% else %>
   <table>
@@ -45,8 +59,6 @@
           <td><%= campus.name %></td>
           <td><%= campus.address %></td>
           <!-- <td><%= link_to 'Show', campus %></td> -->
-          <!-- <td><%= link_to 'Edit', edit_campus_path(campus) %></td> -->
-          <!-- <td><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
         </tr>
       <% end %>
     </tbody>

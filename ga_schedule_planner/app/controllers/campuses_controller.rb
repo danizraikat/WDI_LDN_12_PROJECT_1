@@ -1,6 +1,7 @@
 class CampusesController < ApplicationController
   before_action :set_campus, only: [:show, :edit, :update, :destroy]
 
+  authorize_resource
   # GET /campuses
   # GET /campuses.json
   def index
