@@ -27,7 +27,7 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li>Hello <%= current_user.email%></li>
+            <li><%= link_to current_user.email, user_path(current_user)%></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>    
           </ul>
@@ -73,6 +73,9 @@
       <% end %>
     </nav>
     
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-info" %>
+    <% end %>
 
     <%= yield %>
 

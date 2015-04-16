@@ -36,12 +36,10 @@
 
   <br>
 
-  <p>
-    <% @classrooms.each do |classroom| %>
-      <% if can? :create, classroom %>
-        <button><%= link_to 'New Classroom', new_classroom_path %></button>
-      <% end %>
-    <% end %>
+  <p>    
+    <% if can? :create, Classroom %>
+    <button><%= link_to 'New Classroom', new_classroom_path %></button>
+    <% end %>    
   </p>
 
 <% else %>

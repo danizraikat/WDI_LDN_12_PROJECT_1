@@ -35,12 +35,10 @@
 
   <br>
 
-  <p>
-    <% @campuses.each do |campus| %>
-      <% if can? :create, campus %>
-        <button><%= link_to 'New Campus', new_campus_path %></button>
-      <% end %>
-    <% end %>
+  <p> 
+    <% if can? :create, Campus %>
+    <button><%= link_to 'New Campus', new_campus_path %></button>
+    <% end %>    
   </p>
 
 <% else %>

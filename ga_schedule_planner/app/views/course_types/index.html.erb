@@ -34,12 +34,10 @@
   </table>
 
   <br>
-  <p>
-    <% @course_types.each do |course_type| %>
-      <% if can? :create, course_type %>
-        <button><%= link_to 'New Course type', new_course_type_path %></button>
-      <% end %>
-    <% end %>
+  <p>    
+    <% if can? :create, CourseType %>
+      <button><%= link_to 'New Course type', new_course_type_path %></button>
+    <% end %>    
   </p>
 
 <% else %>

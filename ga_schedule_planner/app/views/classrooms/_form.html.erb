@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :campus_id %><br>
-    <%= f.number_field :campus_id %>
+    <%= f.collection_select :campus_id, Campus.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -45,10 +45,8 @@
   <br>
 
   <p>
-    <% @courses.each do |course| %>
-      <% if can? :create, course %>
-        <button><%= link_to 'New Course', new_course_path %></button>
-      <% end %>
+    <% if can? :create, Course %> <!-- Course is a class -->
+      <button><%= link_to 'New Course', new_course_path %></button>
     <% end %>
   </p>
 
