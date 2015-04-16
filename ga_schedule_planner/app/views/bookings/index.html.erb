@@ -17,8 +17,8 @@
         <td><%= booking.user.second_name %></td>
         <td><%= booking.course.name %></td>
         <!-- <td><%= link_to 'Show', booking %></td> -->
-        <td><button><%= link_to 'Edit', edit_booking_path(booking) %></button></td>
-        <td><button><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button class="change"><%= link_to 'Edit', edit_booking_path(booking) %></button></td>
+        <td><button class="change"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<button><%= link_to 'New Booking', new_booking_path %></button>
+<button class="new"><%= link_to 'New Booking', new_booking_path %></button>
 

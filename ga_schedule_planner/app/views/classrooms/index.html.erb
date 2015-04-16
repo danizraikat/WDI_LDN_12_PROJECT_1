@@ -21,12 +21,12 @@
           <td><%= classroom.campus_id %></td>
           <td>
             <% if can? :update, classroom %>
-              <button><%= link_to 'Edit', edit_classroom_path(classroom) %></button>
+              <button class="change"><%= link_to 'Edit', edit_classroom_path(classroom) %></button>
             <% end %>
           </td>
           <td>
             <% if can? :destroy, classroom %>
-              <button><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <button class="change"><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>           
           </td>
         </tr>
@@ -38,7 +38,7 @@
 
   <p>    
     <% if can? :create, Classroom %>
-    <button><%= link_to 'New Classroom', new_classroom_path %></button>
+    <button class="new"><%= link_to 'New Classroom', new_classroom_path %></button>
     <% end %>    
   </p>
 

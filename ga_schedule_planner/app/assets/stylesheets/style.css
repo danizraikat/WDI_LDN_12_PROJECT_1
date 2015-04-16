@@ -1,9 +1,13 @@
-table {
-  : center;
+h1 {
+  color: white;
 }
 
 body {
-  background-image: url('http://www.pixeden.com/media/k2/galleries/442/002-subtle-light-pattern-background-texture-vol6.jpg');
+  background-image: url('http://www.unsigneddesign.com/Seamless_background_textures/1200px/seamlesstexture14_1200.jpg');
+}
+
+body.edit {
+  background-image: url('http://www.unsigneddesign.com/Seamless_background_textures/1200px/seamlesstexture1_1200.jpg')
 }
 
 ul.title-area {
@@ -13,3 +17,5 @@ ul.title-area {
 button {
   background-color: #B8860B;
 }
+
+

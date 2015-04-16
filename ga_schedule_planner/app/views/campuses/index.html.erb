@@ -21,12 +21,12 @@
           <td><%= image_tag campus.campus_location_image.url %></td>
           <td>
             <% if can? :update, campus %>
-              <button><%= link_to 'Edit', edit_campus_path(campus) %></button>
+              <button class="change"><%= link_to 'Edit', edit_campus_path(campus) %></button>
             <% end %>
           </td>
           <td>
             <% if can? :destroy, campus %>
-              <button><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              <button class="change"><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></button>
             <% end %>      
           </td>
         </tr>
@@ -38,7 +38,7 @@
 
   <p> 
     <% if can? :create, Campus %>
-    <button><%= link_to 'New Campus', new_campus_path %></button>
+    <button class="new"><%= link_to 'New Campus', new_campus_path %></button>
     <% end %>    
   </p>
 

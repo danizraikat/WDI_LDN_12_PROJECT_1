@@ -20,12 +20,12 @@
           <!-- <td><%= link_to 'Show', course_type %></td> -->
           <td>
             <% if can? :update, course_type %>
-              <button><%= link_to 'Edit', edit_course_type_path(course_type) %></button>
+              <button class="change"><%= link_to 'Edit', edit_course_type_path(course_type) %></button>
             <% end %>
           </td>
           <td>
             <% if can? :destroy, course_type %>
-              <button><%= link_to 'Destroy', course_type, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              <button class="change"><%= link_to 'Destroy', course_type, method: :delete, data: { confirm: 'Are you sure?' } %></button>
             <% end %>
           </td>
         </tr>
@@ -36,7 +36,7 @@
   <br>
   <p>    
     <% if can? :create, CourseType %>
-      <button><%= link_to 'New Course type', new_course_type_path %></button>
+      <button class="new"><%= link_to 'New Course type', new_course_type_path %></button>
     <% end %>    
   </p>
 
