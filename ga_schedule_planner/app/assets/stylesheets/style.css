@@ -16,6 +16,11 @@ ul.title-area {
 
 button {
   background-color: #B8860B;
+  background-color,
+}
+
+button.hover {
+  background-color: #B8860B;
 }
 
 
