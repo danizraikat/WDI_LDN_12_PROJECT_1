@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #THIS IS RAW DATA USED FOR TESTING (AND IT GETS STORED)
-u1 = User.create!(email: "admin@admin.com", password: "password", role: "admin", first_name: "admin", second_name: "admin", gender: "female", tel_number: "0777")
-u2 = User.create!(email: "dani@dani.com", password: "password", role: "student", first_name: "dani", second_name: "zraykat", gender: "male", tel_number: "07557359072")
+u1 = User.create!(email: "admin@admin.com", password: "password", role: "Admin", first_name: "admin", second_name: "admin", gender: "Female", tel_number: "0777")
+u2 = User.create!(email: "dani@dani.com", password: "password", role: "Student", first_name: "dani", second_name: "zraykat", gender: "Male", tel_number: "07557359072")
 
 course_type1 = CourseType.create!(name: "WDI", description: "Best course")
 course_type2 = CourseType.create!(name: "Analytics", description: "The analytics course")
